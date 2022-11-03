@@ -1,21 +1,22 @@
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        Scanner sc = new Scanner(System.in);
-        int[] arr = new int[6];
-        int[] chsArr = new int[]{1, 1, 2, 2, 2, 8};
-        for (int i = 0; i < arr.length; i++) {
-            int n = sc.nextInt();
-            arr[i] = chsArr[i] - n;
-        }
+        int[] arr = new int[]{1, 1, 2, 2, 2, 8};
+        int[] result = new int[6];
 
-        for (int i : arr) {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] strArr = br.readLine().split(" ");
+
+        for (int i = 0; i < strArr.length; i++) {
+            result[i] = arr[i] - Integer.parseInt(strArr[i]);
+        }
+        
+        for (int i : result) {
             System.out.print(i + " ");
         }
-
-
     }
 }
