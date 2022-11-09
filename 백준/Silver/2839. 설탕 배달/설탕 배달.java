@@ -5,18 +5,24 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
-  
-        if (N == 4 || N == 7) {
-            System.out.println(-1);
-        }
-        else if (N % 5 == 0) {
-            System.out.println(N / 5);
-        }
-        else if (N % 5 == 1 || N % 5 == 3) {
-            System.out.println((N / 5) + 1);
-        }
-        else if (N % 5 == 2 || N % 5 == 4) {
-            System.out.println((N / 5) + 2);
+
+        int cnt = 0;
+
+        while(true){
+            if(N % 5 == 0){
+                cnt += N / 5;
+                System.out.println(cnt);
+                break;
+            } else {
+                N -= 3;
+                cnt++;
+            }
+
+            if(N < 0){
+                System.out.println(-1);
+                break;
+            }
+
         }
 
     }
